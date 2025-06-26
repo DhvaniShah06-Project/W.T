@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L6A6</title>
+</head>
+
+<body>
+    <form onsubmit="submitForm(event)" novelidate style="text-align: center;">
+        <fieldset>
+
+            <h1>Form</h1>
+            <hr>
+            Name : <input type="text" id="uname" placeholder="Enter Name"><br>
+            <span id="erruname"></span><br> <br>
+
+            E-mail : <input type="email" id="uemail" placeholder="Enter Email"><br>
+            <span id="erruemail"></span><br><br>
+
+            Age : <input type="number" id="uage" placeholder="Enter Age"><br>
+           <span id="euage"></span><br><br>
+            Enrollment : <input type="number" id="uenroll" placeholder="Enter Enrollment"><br>
+            <span id="euenroll"></span><br><br>
+            <!--  Password :  <input type="password" id = "Password"><br> 
+         Re-enter password :  <input type="password" id = "NPass"><br>  -->
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+    <script type="text/javascript">
+
+        document.getElementById("uname").addEventListener("blur", () => {
+            if (uname.value.length < 8) {
+                msg = document.getElementById("erruname")
+                msg.innerHTML = "Enter Valid Username Length"
+                msg.style.color = "red";
+                uname.style.border = "1px solid red";
+            }
+        })
+
+        document.getElementById("uemail").addEventListener("blur", () => {
+    
+            err = document.getElementById("erruemail");
+             const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!pattern.test(erruemail)) {
+                err.innerHTML = "Enter Valid E-Mail"
+                err.style.color = "red";
+                uemail.style.border = "1px solid red";
+            }
+        })
+
+  
+
+         document.getElementById("uage").addEventListener("blur", () => {
+    
+            err = document.getElementById("euage");
+            if (uage.value < 18) {
+                err.innerHTML = "Enter Valid Age"
+                err.style.color = "red";
+                uage.style.border = "1px solid red";
+            }
+        })
+
+         document.getElementById("uenroll").addEventListener("blur", () => {
+    
+            err = document.getElementById("euenroll");
+             enrollPattern = /^\d{11}$/;
+            if (enrollpattern.value!=11) {
+                err.innerHTML = "Enter Valid Enrollment Number"
+                err.style.color = "red";
+                uenroll.style.border = "1px solid red";
+            }
+        })
+
+
+
+        
+    </script>
+</body>
+
+</html>

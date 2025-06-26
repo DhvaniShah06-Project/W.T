@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L2A6</title>
+</head>
+<body>
+    <script type="text/javascript">
+        b = prompt("Enter String : ");
+        f = b.indexOf("a");
+        l = b.lastIndexOf("a");
+         if (f !== -1 && l !== -1 && f < l) {
+            res = b.substring(f + 1, l);
+        }
+
+        document.write(res);
+
+        // res = b.substring(f+1,l);
+        // document.write(res);
+    </script>
+</body>
+</html>

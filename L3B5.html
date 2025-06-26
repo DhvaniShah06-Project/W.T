@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3B5</title>
+</head>
+<body>
+    <script type = "text/javascript">
+        a = [];
+        b = prompt("Enter Sentence : ");
+        a = b.split(" ");
+        document.write(b);
+        document.write("<br/>");
+        sen = prompt("Enter Word To Find : ");
+        for(i=0;i<a.length;i++){
+            if(a[i]==sen){
+                document.write(sen+ " Found At Index : ",i);
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

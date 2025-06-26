@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L1A6</title>
+</head>
+<body>
+    <script type="text/javascript">
+        a=parseInt(prompt("Enter Number : "))
+        temp=a;
+        count=0;
+        sum=0;
+        rem=0;
+        const digits = a.toString().length;
+        // while(a!=0){
+        //     count++;
+        //     a=Math.floor(a/10);
+        // }
+        //  a=temp;
+        while(temp!=0){
+             rem=temp%10;
+             sum=sum*Math.pow(rem,count)+sum;
+          temp= Math.floor(temp/10);
+        }
+       
+        if(sum==temp){
+            document.write(a+" is Armstrong");
+        }
+        else{
+            document.write(a+" is not Armstrong");
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5A4</title>
+    <style>
+        input{
+            margin-top: 10px;
+
+        }
+        button{
+           background-color: blue;
+           color: white;
+            display: block;
+            margin: 15px auto;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form onsubmit="submitForm(event)" novelidate style="text-align: center;">
+        <h1>Form</h1>
+       
+        Name : <input type="text" id="name" placeholder="Enter Name"><br> 
+         E-mail : <input type="email" id="mail" placeholder="Enter Email" ><br> 
+          Age : <input type="number" id="Age"placeholder="Enter Age"><br> 
+         Enrollment : <input type="number" id="Enrollment" placeholder="Enter Enrollment"><br> 
+        <!--  Password :  <input type="password" id = "Password"><br> 
+         Re-enter password :  <input type="password" id = "NPass"><br>  -->
+        <button type="submit">Submit</button>
+    </form>
+    <script type="text/javascript">
+
+        function submitForm() {
+
+            Name = document.getElementById("name").value
+            if (Name.length < 8) {
+                alert("Enter Valid Length of name")
+                return;
+            }
+            // regexp = new RegExp(pattern);
+            email = document.getElementById("mail").value
+            const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!pattern.test(email)) {
+                alert("Invalid Email")
+                return;
+            }
+            age = document.getElementById("Age").value
+            if (age < 18) {
+                alert("Enter Valid Age");
+                return;
+            }
+            enrollment = document.getElementById("Enrollment").value;
+            enrollPattern = /^[0-9]{11}$/;
+            if (!enrollPattern.test(enrollment)) {
+                alert("Enter valid Enrollment Number");
+                return;
+            }
+
+
+        }
+        function clearForm() {
+            document.getElementById("name").value = ""
+            document.getElementById("mail").value = ""
+            document.getElementById("Age").value = ""
+            document.getElementById("Enrollment").value = ""
+
+        }
+    </script>
+</body>
+
+</html>

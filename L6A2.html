@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L6A2</title>
+</head>
+
+<body>
+    <p id="test">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa omnis facilis sequi accusamus, nemo
+        voluptate
+        quam ab quaerat delectus soluta incidunt suscipit id! Quaerat, officiis.</p>
+    <button id="btn">Click </button>
+    <script type="text/javascript">
+         document.getElementById("btn").addEventListener("click", () => {
+           ref = document.getElementById("test")
+            ref.style.color = 'red'
+        })
+         document.getElementById("btn").addEventListener("dblclick", () => {
+           ref = document.getElementById("test")
+            ref.style.color = 'green'
+        })
+         document.getElementById("btn").addEventListener("mousedown", () => {
+           ref = document.getElementById("test")
+            ref.style.color = 'yellow'
+        })
+         document.getElementById("btn").addEventListener("mousemove", () => {
+           ref = document.getElementById("test")
+            ref.style.color = 'orange'
+        })
+         document.getElementById("btn").addEventListener("mouseover", () => {
+           ref = document.getElementById("test")
+            ref.style.color = 'blue'
+        })
+         document.getElementById("btn").addEventListener("mouseout", () => {
+           ref = document.getElementById("test")
+            ref.style.color = 'pink'
+        })
+         document.getElementById("btn").addEventListener("mouseup", () => {
+           ref = document.getElementById("test")
+            ref.style.color = 'gray'
+        })
+    </script>
+</body>
+
+</html>

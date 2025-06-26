@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L5A1</title>
+    <style>
+        button {
+            background-color: blue;
+            /* green */
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+             width: 100%;
+
+
+        }
+
+        button:hover {
+            background-color: orange;
+            transform : scale(1.05);
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+        <h1 style="margin: 90px 0px 50px 450px; "><b>BASIC CALCULATOR</b></h1>
+    <table style="margin: -40px 0px 50px 450px; height: 315px;">
+        <tr>
+            <td colspan="4"><input type="text" id="call" style="width: 300px; height: 35px;" /></td>
+        </tr>
+
+        <tr>
+            <td><button onclick="clearAll()">AC</button></td>
+            <td><button onclick="deleteLast()">C</button></td>
+            <td><button onclick="deleteLast()">X</button></td>
+            <td><button onclick="callMe('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="callMe('7')">7</button></td>
+            <td><button onclick="callMe('8')">8</button></td>
+            <td><button onclick="callMe('9')">9</button></td>
+            <td><button onclick="callMe('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="callMe('4')">4</button></td>
+            <td><button onclick="callMe('5')">5</button></td>
+            <td><button onclick="callMe('6')">6</button></td>
+            <td><button onclick="callMe('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="callMe('1')">1</button></td>
+            <td><button onclick="callMe('2')">2</button></td>
+            <td><button onclick="callMe('3')">3</button></td>
+            <td><button onclick="callMe('%')">%</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="callMe('00')" id="call">00</button></td>
+            <td><button onclick="callMe('0')">0</button></td>
+            <td><button onclick="callMe('.')">.</button></td>
+            <td><button onclick="calculateAnswer()">=</button></td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        function callMe(a) {
+            document.getElementById("call").value += a;
+        }
+        function clearAll() {
+            document.getElementById("call").value = "";
+        }
+        function deleteLast() {
+            exp = document.getElementById("call").value;
+            ans = exp.slice(0, -1);
+            document.getElementById("call").value = ans;
+        }
+        function calculateAnswer() {
+            exp = document.getElementById("call").value;
+            finalAns = eval(exp);
+            document.getElementById("call").value = finalAns;
+        }
+    </script>
+</body>
+
+</html>

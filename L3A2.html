@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3A2</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        a = [];
+        n = 5
+        for (i = 0; i < 5; i++) {
+            a[i] = parseInt(prompt("Enter Array Element : "));
+        }
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n; j++) {
+                if (a[i] < a[j]) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        document.write("Array in Ascending : ", a);
+    </script>
+</body>
+
+</html>

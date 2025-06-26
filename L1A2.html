@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L1A2</title>
+</head>
+<body>
+    <script type="text/javascript">
+        a = parseInt(prompt("Enter Number : "));
+        b=true;
+        for(i=2;i<a/2;i++){
+            if(a%i==0){
+                b=false;
+                break;
+                
+            }
+        }
+        if(b){
+            document.write(a+ " is Prime Number")
+        }
+        else{
+             document.write(a+ " is Not Prime Number")
+        }
+
+
+
+    </script>
+</body>
+</html>
