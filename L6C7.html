@@ -59,10 +59,17 @@
             arr.splice(i, 1);
             display();
         }
-        function editMe(i) {
-            ei = i;
-            document.getElementById("uname").value = arr[i];
-             document.getElementById("edit").innerHTML = "Edit";
+        // function editMe(i) {
+        //     ei = i;
+        //     document.getElementById("uname").value = arr[i];
+        //      document.getElementById("edit").innerHTML = "Edit";
+        // }
+        function editMe(i)
+        {
+             document.getElementById("uname").value = arr[i];
+            document.getElementById("edit").innerHTML = "Edit";
+            deleteElement(i);
+            document.getElementById("edit").innerHTML = "Add";
         }
 
 
