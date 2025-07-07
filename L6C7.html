@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+</head>
+
+<body>
+    <label for="">UserName : </label>
+    <input type="text" id="uname">
+    <button onclick="addStu()" id="edit">ADD</button>
+    <table border="2" cellspacing="3px">
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Action</th>
+        </tr>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <script>
+        arr = [];
+        ei = -1;
+        function addStu() {
+            username = document.getElementById("uname").value;
+            if (ei != -1) {
+                arr[ei] = username;
+                ei = -1;
+                document.getElementById("edit").innerHTML = "Add";
+            }
+            else {
+                if (username == '') {
+                    alert("Enter Name");
+                }
+                else {
+                    arr.push(username);
+                }
+            }
+            display();
+            document.getElementById("uname").value = ''
+
+        }
+        function display() {
+            temp = ''
+            for (i = 0; i < arr.length; i++) {
+                temp += `<tr>
+                <td>${i + 1}</td>
+                <td>${arr[i]}</td>
+                <td><button onclick = 'editMe(${i})'>Edit</button> 
+                 <button onclick='deleteElement(${i})'>Delete</button></td>
+                    </tr>`
+            }
+            document.getElementById("tbody").innerHTML = temp;
+        }
+        function deleteElement(i) {
+            arr.splice(i, 1);
+            display();
+        }
+        function editMe(i) {
+            ei = i;
+            document.getElementById("uname").value = arr[i];
+             document.getElementById("edit").innerHTML = "Edit";
+        }
+
+
+    </script>
+</body>
+
+</html>
