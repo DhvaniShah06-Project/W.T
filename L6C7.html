@@ -26,6 +26,19 @@
         ei = -1;
         function addStu() {
             username = document.getElementById("uname").value;
+        //     if(username == '')
+        // {
+        //     alert("Enter Name");
+        // }
+        // else{
+        //     arr.push(username);
+        // }
+        // if(ei != -1)
+        // {
+        //     arr[ei] = username;
+        //    ei = -1;
+        //    document.getElementById("edit").innerHTML = "Add";
+        // }
             if (ei != -1) {
                 arr[ei] = username;
                 ei = -1;
@@ -59,19 +72,11 @@
             arr.splice(i, 1);
             display();
         }
-        // function editMe(i) {
-        //     ei = i;
-        //     document.getElementById("uname").value = arr[i];
-        //      document.getElementById("edit").innerHTML = "Edit";
-        // }
-        function editMe(i)
-        {
-             document.getElementById("uname").value = arr[i];
-            document.getElementById("edit").innerHTML = "Edit";
-            deleteElement(i);
-            document.getElementById("edit").innerHTML = "Add";
+        function editMe(i) {
+            ei = i;
+            document.getElementById("uname").value = arr[i];
+             document.getElementById("edit").innerHTML = "Edit";
         }
-
 
     </script>
 </body>
