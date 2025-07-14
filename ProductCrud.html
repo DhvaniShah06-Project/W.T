@@ -5,29 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+     <style>
+      input{
+        border-radius: 5px;
+      }
+     </style>
 </head>
-<body style="margin: 15px;">
-  <h1>Product Management</h1>
-    <span> <label for="">Productn Name : </label>
-    <input type="text" id="pname">
+<body style="margin: 15px; text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif ;">
+ <h1 class="mb-4">🛒 Product Management</h1>
+  <span>
+    <label for="pname" >Product Name : </label>
+        <input type="text" id="pname"  placeholder="Enter Product name">
 
-     <label for="" style="margin-left: 185px;">Category : </label>
-    <input type="text" id="pcategory">
-</span>
+
+     <label for="pcategory"  style="margin-left: 185px;">Category : </label>
+    <input type="text" id="pcategory"  placeholder="Enter Category">
+    </span>
 <br><br>
 <span>
     <label for="" >Price : </label>
-    <input type="text" id="price">
+    <input type="text" id="price" placeholder="Enter Price">
 
     <label for="" style="margin-left: 250px;">Image URL : </label>
-    <input type="text" id="url">
+    <input type="text" id="url" placeholder="Enter URL">
 </span>
 <br>
-    <button onclick="addPro()" id="edit">ADD</button>
-    <span>
-    <div class="card" style="width: 18rem;" id="card"> 
-    <p class="card-text" id="body"></p>
-</div></span>
+<div id="productContainer"></div>
+    <button class="btn btn-primary" onclick="addPro()" id="edit">ADD</button>
+    <!-- <div class="btn btn-primary" onclick="addPro()" id="edit">Add</div> -->
+  
     <script>
       arr = [];
       ei = -1;
@@ -71,16 +77,19 @@
          function display() {
             temp = ''
             for (i = 0; i < arr.length; i++) {
-                temp += `<span><p>
-                  ${arr[i].ProductName}<br>
-                  ${arr[i].Category}<br>
-                  ${arr[i].Price}<br>
-                <img src=${arr[i].URL} /></p>
-                <button onclick = 'editMe(${i})'>Edit</button> 
-                 <button onclick='deleteElement(${i})'>Delete</button></span><br><br>`
-              }                
+                temp += `
+        <div class="card mb-3" style="width: 18rem;">
+            <img src="${arr[i].URL}" class="card-img-top" alt="Product Image">
+            <div class="card-body">
+                <h5 class="card-title">${arr[i].ProductName}</h5>
+                <p class="card-text">Category: ${arr[i].Category}<br>Price: ${arr[i].Price}</p>
+                <button class="btn btn-primary btn-sm" onclick="editMe(${i})">Edit</button>
+                <button class="btn btn-danger btn-sm" onclick="deleteElement(${i})">Delete</button>
+            </div>
+        </div>`;
+      }
 
-            document.getElementById("body").innerHTML = temp;
+            document.getElementById("productContainer").innerHTML = temp;
          }
           
          function deleteElement(i) {
