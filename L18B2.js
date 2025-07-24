@@ -46,7 +46,7 @@ const app = http.createServer((req, res) => {
         res.end(data);
       }
     });
-  } else if (req.url == "/ProductCrud.html") {
+  } else if (req.url == "/ProductCrud") {
     fs.readFile("./ProductCrud.html", (err, data) => {
       if (err) {
         res.statusCode = 404;
