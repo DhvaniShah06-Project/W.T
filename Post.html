@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     const xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "https://684af427165d05c5d35af75d.mockapi.io/Product", true)
+        newData = JSON.stringify(
+            {
+            name:newName,
+            image: "https://avatars.githubusercontent.com/u/73582425"
+            }
+    
+        )
+        xhttp.setRequestHeader('Content-Type','application/json')
+        xhttp.onload = function ()
+        {
+            if(xhttp.status == 201)
+            data = JSON.parse(this.responseText)
+        }
+        </script>
+</body>
+</html>
