@@ -8,13 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-    Enrollment : <input type="number">      
+    Enrollment : <input type="tel">      
     <script>
         $("input").blur(function(){
             a = $("input").val();
             pattern = "^[0-9]{11}$"
-            if(pattern.test(a)){
-                alert.write("Valid")
+            dynamicPattern = new RegExp(pattern);
+            if(dynamicPattern.test(a)){
+                
+                alert("Valid")
              $("input").val("");
             }
             else{
