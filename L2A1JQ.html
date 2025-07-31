@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L2A1</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <img src="https://th.bing.com/th/id/OIP.kzo22vGPqcf7d5w_QJhrfQHaFj?w=232&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3">
+    <button id="btn1">Fade In</button>
+    <button id="btn2">Fade Out</button>
+    <button id="btn3">Fade Toggle</button>
+    <h1>hello</h1>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $("#btn1").click(function(){
+            $('img').fadeIn()
+           })
+
+           $("#btn2").click(function(){
+            $('img').fadeOut()
+           })
+
+            $("#btn3").click(function(){
+            $('img').fadeOut()
+           })
+        })
+
+
+        //   $('document').ready(function(){
+        //    $('img').click(function(){
+        //     $(this).fadeToggle(3000)
+        //    })
+        // $('#btn2').click(function(){
+        //     $('h1').fadeOut()
+        // })
+        // })
+    </script>
+</body>
+</html>

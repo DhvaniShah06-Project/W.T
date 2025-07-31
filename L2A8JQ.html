@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<div > Parent Here
+    <p id="parent">p here</p>
+    <h1>h1 here</h1>
+    <h3><p>P inside here</p>h3 here</h3>
+
+</div>
+<button id="btn">Click</button>
+<script>
+    $(document).ready(function(){
+    $("#btn").click(function()
+{
+   $("#parent").siblings().hide();
+   $("#parent").hide();
+})
+    })
+
+
+</script>
+</body>
+
+</html>
