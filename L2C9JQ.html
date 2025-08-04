@@ -1,0 +1,83 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+        <label for="">UserName : </label>
+        <input type="text" id="uname">
+        <button id="edit">ADD</button>
+        <button id="display">Display</button>
+        <table border="2" cellspacing="3px">
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Action</th>
+            </tr>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+        <script>
+            arr = [];
+            ei = -1;
+            $(document).ready(function () {
+                $("#edit").click(function () {
+                    username = $("#uname").val();
+                    if (ei != -1) {
+                        arr[ei] = username;
+                        ei = -1;
+                        $("#edit").text("Add")
+                    }
+                    else {
+                        if (username == '') {
+                            alert("Enter Name");
+                        }
+                        else {
+                            arr.push(username);
+                        }
+                    }
+                    $("#uname").val("")
+
+
+
+                })
+                $("#display").click(function () {
+
+                    temp = ''
+                    for (i = 0; i < arr.length; i++) {
+                        temp += `<tr>
+                    <td>${i + 1}</td>
+                    <td>${arr[i]}</td>
+                <td><button onclick='editMe(${i})'>Edit</button>
+    <button onclick='deleteElement(${i})'>Delete</button></td>
+
+                        </tr>`
+                        $("#tbody").html(temp);
+                    }
+                })
+            })
+
+            function deleteElement(i) {
+                arr.splice(i, 1);
+                 $("#display").click();
+
+             
+            }
+            function editMe(i) {
+                ei = i;
+                $("#uname").val(arr[i]);
+                $("#edit").text("Edit");
+            }
+
+        </script>
+    </body>
+
+    </html>
