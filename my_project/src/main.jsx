@@ -3,32 +3,27 @@ import { createRoot } from 'react-dom/client'
 import React from 'react';
 // import Abc from './Components/Fndemo'
 // import {Abc,Abc2,Abc3} from './Components/Demo'
-import username from './Components/Variable'
+// import username from './Components/Variable'
 // import Demo from './Components/Variable'
-
+// import {Greet,Greet2} from './Components/class'
+// import Parent from './Components/PropsDemo';
+// import Event from './Components/Event_Handle';
+// import Display from './Components/Display';
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    Name = {username}
-    {/* <Abc/>
+    <Display/>
+
+    {/* <Event/> */}
+    {/* <Parent/> */}
+    {/* Name = {username}
+    <Abc/>
     <Abc2/>
-    <Abc3/> */}
-    {/* <Demo/> */}
+    <Abc3/>
+    <Demo/>
+      <Greet/>
+      <Greet2/> */}
   </StrictMode>,
 )
 
-// class Abc2 extends React.Component{
-//    render()
-//   {
-//   return(
-//     <>
-// <h1>Hello World From Class</h1>
-//     <h1>Hello class one</h1>
-//     <h2>Hello class two</h2>
-//     <h3>Hello class Three</h3>
-//     </>
-  
-//   );
-// }
-// }
